@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"monitor-ui-service","namespace":"default"},"spec":{"gateways":["httpbin-gateway"],"hosts":["monitor-ui.com"],"http":[{"match":[{"uri":{"prefix":"/"}}],"route":[{"destination":{"host":"grafana","port":{"number":3000}}}]}]}}
+  generation: 4
+  name: monitor-ui-service
+  namespace: default
+spec:
+  gateways:
+  - httpbin-gateway
+  hosts:
+  - monitor-ui.com
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: grafana
+        port:
+          number: 3000

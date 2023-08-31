@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: blackbox-exporter
+  namespace: default
+  labels:
+      app: blackbox-exporter
+spec:
+  selector:
+    matchLabels:
+      app: blackbox-exporter
+  template:
+    metadata:
+      name: blackbox-exporter
+      labels:
+        app: blackbox-exporter
+    spec:
+      containers:
+      - name: blackbox-exporter-container-0
+        image: prom/blackbox-exporter:master
+        ports:
+        - containerPort: 9115
+        volumeMounts:
+        - name: blackbox-exporter-config-volume
+          mountPath: /config
+      volumes:
+      - name: blackbox-exporter-config-volume
+        configMap:
+          name: blackbox-exporter-config
