@@ -1,0 +1,35 @@
+apiVersion: v1
+entries:
+  grafana:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 8.5.3
+    created: "2023-09-03T00:36:23.538426784+05:30"
+    dependencies:
+    - name: common
+      repository: https://marketplace.azurecr.io/helm/v1/repo
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Grafana is an open source metric analytics and visualization suite
+      for visualizing time series data that supports various types of data sources.
+    digest: 0b09b53d65b15b50330b221face25b53ad97a58bb7127d5dc9e47b2ea9cec78b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/grafana
+    icon: https://bitnami.com/assets/stacks/grafana/img/grafana-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - metrics
+    - logs
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: grafana
+    sources:
+    - https://github.com/bitnami/bitnami-docker-grafana
+    - https://grafana.com/
+    urls:
+    - https://github.com/sanskar153/Monitoring-with-Prometheus-Grafana/grafana-7.7.4.tgz
+    version: 7.7.4
+generated: "2023-09-03T00:36:23.529237083+05:30"
